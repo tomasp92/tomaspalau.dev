@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../NavBar";
 import languages from '../../utils/languages';
 import { useLanguage } from "../../Context/languageContext";
+import Image from "next/image";
 const { ENGLISH, SPANISH } = languages
 
 const phrase = {
@@ -25,7 +26,7 @@ export default function (){
                 <div className="drawer" >
                     <div>
                         <div>
-                            <img src="images/foto-yo.png"/>
+                            <Image className="img" width={100} height={140} src="/images/foto-yo.png"/>
                         </div>
                         <div>
                             <h1>Tomás Palau Posse</h1>
@@ -89,7 +90,7 @@ export default function (){
                 .bottomText{
                     left: 2rem;
                 }
-                .drawer div img{
+                .drawer div .img{
                     width: 60%;
                     margin: auto
                 }

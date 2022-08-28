@@ -2,52 +2,126 @@ import React from "react"
 import Masonry from '@mui/lab/Masonry';
 import { useLanguage } from "../../Context/languageContext";
 import languages from '../../utils/languages';
+import Image from "next/image";
+import { height } from "@mui/system";
 const { ENGLISH } = languages
-export default function Technologies(){
+
+const techImages = [
+    {
+        src: "/images/technologies/react.png",
+        /* width: 500,
+        height: 500, */
+        width: 1,
+        height: 1,
+        category: 4
+    },
+    {
+        src: "/images/technologies/c.png",
+        /* width: 1344,
+        height: 1456, */
+        width: 1,
+        height: 1.083,
+        category: 0
+    },
+    {
+        src: "/images/technologies/css.png",
+        /* width: 969,
+        height: 1080, */
+        width: 1,
+        height: 1.114, 
+        category: 3
+    },
+    {
+        src: "/images/technologies/firebase.png",
+        /* width: 1200,
+        height: 321, */
+        width: 1,
+        height: 0.2675,
+        category: 3
+    },
+    {
+        src: "/images/technologies/js.png",
+        /* width: 540,
+        height: 540, */
+        width: 1,
+        height: 1,
+        category: 4
+    },
+    {
+        src: "/images/technologies/node.png",
+        /* width: 1600,
+        height: 1241, */
+        width: 1,
+        height: 0.77,
+        category: 2
+    },
+    {
+        src: "/images/technologies/html.png",
+        /* width: 903,
+        height: 1080, */
+        width: 1,
+        height: 1.196,
+        category: 3
+    },
+    {
+        src: "/images/technologies/mysql.png",
+        /* width: 754,
+        height: 500, */
+        width: 1,
+        height: 0.663,
+        category: 2
+    },
+    {
+        src: "/images/technologies/next.png",
+        /* width: 311,
+        height: 186, */
+        width: 1,
+        height: 0.598,
+        category: 2
+    },
+    {
+        src: "/images/technologies/mongo.png",
+        /* width: 750,
+        height: 750, */
+        width: 1,
+        height: 1,
+        category: 1
+    },
+    {
+        src: "/images/technologies/python.png",
+        /* width: 512,
+        height: 512, */
+        width: 1,
+        height: 1,
+        category: 1
+    },
+    {
+        src: "/images/technologies/php.png",
+        /* width: 1280,
+        height: 691,*/
+        width: 1,
+        height: 0.539,
+        category: 0
+    }
+
+]
+
+export default function Technologies() {
     const { language } = useLanguage()
-    return(
+    return (
         <React.Fragment>
             <section>
                 <div className="titleContainer">
                     <h2>{language === ENGLISH ? "Technologies" : "Tecnologías"}</h2>
                 </div>
-                <Masonry columns={4} spacing={{ xs: 0.5, sm: 0.5, md: 0.5, lg: 0.5}}>
-                    <div className="imageContainer">
-                        <img className="imgReallyBig" src="images/technologies/react.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgReallySmall" src="images/technologies/c.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgBig" src="images/technologies/css.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img  className="imgBig" src="images/technologies/firebase.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgReallyBig" src="images/technologies/js.png"/>
-                    </div>
-                    <div className="imageContainer">
-                    <img className="imgMedium" src="images/technologies/node.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgBig" src="images/technologies/html.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgMedium" src="images/technologies/mysql.png"/>
-                    </div>
-                    <div className="imageContainer">
-                    <img className="imgBig" src="images/technologies/next.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgSmall" src="images/technologies/mongo.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img className="imgSmall" src="images/technologies/python.png"/>
-                    </div>
-                    <div className="imageContainer">
-                        <img  className="imgReallySmall" src="images/technologies/php.png"/>
-                    </div>
+                <Masonry columns={4} spacing={{ xs: 0.5, sm: 0.5, md: 0.5, lg: 0.5 }}>
+                    {
+                        techImages.map((img, i)=>
+                            <div className="imageContainer" key={img + i}>
+                                <Image className="img" src={img.src} width={img.width*30*(img.category*15+1)} height={img.height*30*(img.category*15+1)}/>
+                            </div>
+                        )
+                    }
                 </Masonry>
             </section>
             <style jsx>{`
@@ -64,7 +138,7 @@ export default function Technologies(){
                     text-algin: center !important;
                     align-content: center;
                 }
-                img {
+                .img {
                     margin: auto;
                     padding: auto auto;
                     text-align: center;

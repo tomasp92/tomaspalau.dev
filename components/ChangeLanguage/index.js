@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react"
 import { useLanguage } from "../../Context/languageContext"
 import languages from '../../utils/languages';
@@ -16,14 +17,14 @@ const ChangeLanguage = ()=>{
         setBothShown(showBoth)
     }
 
-    const spanishFlag = <div onClick={()=>changeLanguage()}> <img src='images/banderas/spain.png' alt='spain flag' /></div>
-    const englishFlag = <div onClick={()=>changeLanguage()}> <img src='images/banderas/united_states.png' alt='us flag' /></div>
+    const spanishFlag = <div onClick={()=>changeLanguage()}> <Image width={32} height={32} src='/images/banderas/spain.png' alt='spain flag' /></div>
+    const englishFlag = <div onClick={()=>changeLanguage()}> <Image width={32} height={32}src='/images/banderas/united_states.png' alt='us flag' /></div>
     
     return(
         <>
             <div 
                 className='languageChoice' 
-                onMouseEnter={() => toggleShowBothFlags(true)} 
+                onMouseEnter={() => toggleShowBothFlags(true)}
                 onMouseLeave={() => toggleShowBothFlags(false)}
             >
                 {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from "@mui/material";
 import FilePresentIcon from '@mui/icons-material/FilePresent';
+import Image from "next/image";
 import { useLanguage } from "../../Context/languageContext";
 import languages from '../../utils/languages';
 const { ENGLISH, SPANISH } = languages
@@ -27,13 +28,13 @@ export default function ContactInformation(){
     return(
         <React.Fragment>
             <section className='section'>
-                <h2>{language === ENGLISH ? "Contact Me" : "Contactame"}</h2>
+                <h2>{language === ENGLISH ? "Get in touch" : "Contactame"}</h2>
                 <div className='actionCalls'>
                     <div className="imageContainer" onClick={redirectToGithub}>
-                        <img src="images/redes/github.png"/>
+                        <Image width={60} height={60} src="/images/redes/github.png"/>
                     </div>
                     <div className="imageContainer" onClick={redirectToLinkedin}>
-                        <img src="images/redes/linkedin.png"/>
+                        <Image width={78} height={78} src="/images/redes/linkedin.png"/>
                     </div>
                 </div>
                 <div className="downloadCV">
@@ -62,9 +63,8 @@ export default function ContactInformation(){
                 .imageContainer{
                     width: 5rem
                     background-color: green;
-                }
-                img{
-                    width: 5rem 
+                    cursor: pointer;
+                    margin: auto;
                 }
                 .downloadCV{
                     width: 10rem;

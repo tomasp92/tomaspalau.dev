@@ -10,7 +10,7 @@ export default function LinkedListItem({icon, text,to}) {
             <Link href={to}>
                 <a>
                     <ListItem>
-                        <ListItemAvatar>
+                        <ListItemAvatar classname="listItem">
                             <Avatar>
                                 {icon}
                             </Avatar>
@@ -19,9 +19,6 @@ export default function LinkedListItem({icon, text,to}) {
                     </ListItem>
                 </a>
             </Link>
-            <style jsx>{`
-                
-            `}</style>
         </>
     )
 }
