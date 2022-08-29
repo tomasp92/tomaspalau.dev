@@ -118,7 +118,7 @@ export default function Technologies() {
                     {
                         techImages.map((img, i)=>
                             <div className="imageContainer" key={img + i}>
-                                <Image className="img" src={img.src} width={img.width*30*(img.category*15+1)} height={img.height*30*(img.category*15+1)}/>
+                                <Image  style={{ padding: "1px auto", textAlign: "center"}} className="techImg" src={img.src} width={img.width*30*(img.category*15+1)} height={img.height*30*(img.category*15+1)} />
                             </div>
                         )
                     }
@@ -138,7 +138,7 @@ export default function Technologies() {
                     text-algin: center !important;
                     align-content: center;
                 }
-                .img {
+                .techImg {
                     margin: auto;
                     padding: auto auto;
                     text-align: center;

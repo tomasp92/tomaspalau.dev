@@ -17,7 +17,7 @@ const webDev = {
 const texto = '“Hard work beats talent, when talent doesn´t work hard”.'
 
 
-export default function (){
+export default function LeftNavigation(){
     const {language} = useLanguage()
     
     return (
