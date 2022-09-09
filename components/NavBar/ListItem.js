@@ -10,7 +10,7 @@ export default function LinkedListItem({icon, text,to}) {
             <Link href={to}>
                 <a>
                     <ListItem>
-                        <ListItemAvatar classname="listItem">
+                        <ListItemAvatar className="listItem">
                             <Avatar>
                                 {icon}
                             </Avatar>

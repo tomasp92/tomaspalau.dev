@@ -1,8 +1,10 @@
 import Whatsapp from '../Whatsapp';
 import Head from 'next/head'
-import LeftNavigation from '../LeftNavigation';
+import Navigation from '../Navigation';
 import LanguangeContextProvider from '../LanguageProvider';
 import ChangeLanguage from './../ChangeLanguage/index';
+import { useWindowWidth, sizes } from "../../hooks/useWindowWidth";
+const { L: computer } = sizes
 
 
 export default function AppWrapper({ children }) {
@@ -15,7 +17,7 @@ export default function AppWrapper({ children }) {
             </Head>
             <LanguangeContextProvider >
                 <div className='mainContent'>
-                    <LeftNavigation />
+                    <Navigation />
                     <div >
                         <div >
                             {children}

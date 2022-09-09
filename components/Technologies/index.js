@@ -118,7 +118,7 @@ export default function Technologies() {
                     {
                         techImages.map((img, i)=>
                             <div className="imageContainer" key={img + i}>
-                                <Image  style={{ padding: "1px auto", textAlign: "center"}} className="techImg" src={img.src} width={img.width*30*(img.category*15+1)} height={img.height*30*(img.category*15+1)} />
+                                <Image className="techImg" src={img.src} width={img.width*30*(img.category*15+1)} height={img.height*30*(img.category*15+1)} />
                             </div>
                         )
                     }
